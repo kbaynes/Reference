@@ -3,6 +3,8 @@
 # Nov 2018
 # Works with NB 8
 
+# The Lesson: Install NetBeans with HomeBrew!
+
 # Call this script as Root
 # sudo removeNetBeans.sh
 
