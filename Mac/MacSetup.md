@@ -13,8 +13,13 @@ https://brew.sh/
 `brew install git`
 
 ### GitHub
-SSH Keys: Pull `kevin-at-k*****.private_key` from Google Drive `My Drive/Keys/MyKeyPairs/`
-`cp kevin-at-k*****.public_key.private_key ~/.ssh`
+SSH Keys: 
+Pull `kevin-at-k*****.private_key` from Google Drive `My Drive/Keys/MyKeyPairs/`
+```
+mkdir ~/.ssh/
+cp kevin-at-k*****.public_key.private_key ~/.ssh/
+cp kevin-at-k*****.public_key.private_key ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa```
 
 ### HomeBrew Cask
 `brew tap homebrew/cask`
