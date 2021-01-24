@@ -12,9 +12,15 @@ https://brew.sh/
 (if not installed already)
 `brew install git`
 
-### SSH Keys
-SSH Keys: Pull `kevin-at-k*****.private_key` from Google Drive `My Drive/Keys/MyKeyPairs/`
-`cp kevin-at-k*****.public_key.private_key ~/.ssh`
+### SSH Keys 
+Download `kevin-at-k*****.private_key` from Google Drive `My Drive/Keys/MyKeyPairs/` then
+
+```
+mkdir ~/.ssh/
+cp kevin-at-k*****.public_key.private_key ~/.ssh/
+cp kevin-at-k*****.public_key.private_key ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+```
 
 ### HomeBrew Cask
 `brew tap homebrew/cask`
@@ -36,7 +42,8 @@ Keep an eye out for things not working, might need to start this on startup
 ```To have launchd start docker-machine now and restart at login:
   brew services start docker-machine
 Or, if you don't want/need a background service you can just run:
-  docker-machine start```
+  docker-machine start
+  ```
 
 ### VirtualBox
 `brew install --cask virtualbox`
