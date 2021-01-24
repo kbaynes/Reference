@@ -12,12 +12,15 @@ https://brew.sh/
 (if not installed already)
 `brew install git`
 
-### GitHub
+### SSH Keys
 SSH Keys: Pull `kevin-at-k*****.private_key` from Google Drive `My Drive/Keys/MyKeyPairs/`
 `cp kevin-at-k*****.public_key.private_key ~/.ssh`
 
 ### HomeBrew Cask
 `brew tap homebrew/cask`
+
+### VS Code
+https://code.visualstudio.com/docs?dv=osx
 
 ## Kubernetes on Mac
 
