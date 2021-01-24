@@ -10,7 +10,11 @@ https://brew.sh/
 
 ### Git (git --version)
 (if not installed already)
-brew install git
+`brew install git`
+
+### GitHub
+SSH Keys: Pull `kevin-at-k*****.private_key` from Google Drive `My Drive/Keys/MyKeyPairs/`
+`cp kevin-at-k*****.public_key.private_key ~/.ssh`
 
 ### HomeBrew Cask
 `brew tap homebrew/cask`
