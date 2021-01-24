@@ -1,5 +1,12 @@
 
-PATH_TO_REFERENCE_PROJ="/Users/kevin/GitHub/KbaynesRepos"
+## Add Bash Functions
+
+Add the following to ~/.bash_profile
+
+```
+OTHER_PATH="/Users/kevin/Documents/MyGitRepos/GitHub/"
+PERSONAL_PATH="/Users/kevin/GitHub/KbaynesRepos"
+PATH_TO_REFERENCE_PROJ=$PERSONAL_PATH
 
 ##
 ## Functions
@@ -13,3 +20,4 @@ f() {
 p() {
   bash $PATH_TO_REFERENCE_PROJ/Reference/Mac/Bash/paths.sh
 }
+```
