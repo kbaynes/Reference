@@ -6,24 +6,10 @@
 f-atom-home() {
   atom ~/
 }
-#
 # SSH Keys
-#
 f-ssh-setup() {
   ssh-add -K ~/.ssh/kevin-at-kevinbaynes-dot-com.private_key
   ssh-add -K ~/.ssh/iam_msgk.private_key
-}
-f-a4w-init() {
-  bash /Users/kevin/GitHub/KbaynesRepos/Reference/Mac/Bash/a4w-init.sh
-}
-f-a4w-webapp() {
-  bash /Users/kevin/GitHub/KbaynesRepos/Reference/Mac/Bash/copy-a4w-manager.sh
-}
-f-tomcat-start() {
-  bash ${PATH_TOMCAT}/bin/startup.sh
-}
-f-tomcat-stop() {
-  bash ${PATH_TOMCAT}/bin/shutdown.sh
 }
 f-aws-work() {
   rm ~/.aws/credentials
@@ -41,7 +27,7 @@ f-help() {
   printf "2  : atom-home - Run 'atom ~/'\n"
   printf "3  : ssh-setup - Add private keys to system SSH\n"
   printf "4  : aws-work  - Set AWS credentials to work\n"
-  printf "5  : aws-kb    - Set AWS credentials to kb\n"
+  printf "5  : aws-kb    - Set AWS credentials to kb personal\n"
 }
 f-action() {
   if [[ ! $1 =~ ^-?[0-9]+$ ]]; then

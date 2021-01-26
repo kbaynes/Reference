@@ -39,11 +39,15 @@ chmod 600 ~/.ssh/kevin-at-k*****.private_key
 ### VS Code
 https://code.visualstudio.com/docs?dv=osx
 
+### Atom
+
+
 ### My Mac Config: Reference
 ```
 cd ~/MyGitRepos/GitHub
 git clone git@github.com:kbaynes/Reference.git
 ```
+Add Bash Functions: See [Add Bash Functions](./Bash/README.md)
 
 ## Kubernetes on Mac
 https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7
