@@ -3,7 +3,7 @@
 ##
 ## Paths
 ##
-f-help() {
+p-list() {
   echo 0 : exit - Exit this script
   echo 1 : help - Print the help
   echo 2 : atom-home - Runs 'atom ~/'
@@ -14,8 +14,8 @@ f-help() {
   echo 7 : tomcat-stop - stops tomcat
 }
 
-echo Enter the number of the function and press Enter
-f-help
+echo Enter the number of the path and press Enter
+p-list()
 
 read -p "Location number:  " -r
 echo    # (optional) move to a new line

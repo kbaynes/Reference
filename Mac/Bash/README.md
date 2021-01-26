@@ -1,23 +1,18 @@
+# Bash Setup
 
-## Add Bash Functions
+Contains a number of defaults for my new Mac.
 
-Add the following to ~/.bash_profile
+f() is a set of common actions
+p() is a set of common paths
+
+## Add Profile Defaults
+
+1. Sets bash as the default shell
+1. Disables the bash deprecation warning
+1. Installs f() for functions
+1. Installs p() for paths
 
 ```
-OTHER_PATH="/Users/kevin/Documents/MyGitRepos/GitHub/"
-PERSONAL_PATH="/Users/kevin/GitHub/KbaynesRepos"
-PATH_TO_REFERENCE_PROJ=$PERSONAL_PATH
-
-##
-## Functions
-##
-f() {
-  bash $PATH_TO_REFERENCE_PROJ/Reference/Mac/Bash/functions.sh $1
-}
-#
-# Locations
-#
-p() {
-  bash $PATH_TO_REFERENCE_PROJ/Reference/Mac/Bash/paths.sh
-}
+cd [path_to]/Reference/Mac/Bash
+bash add-profile-defaults.sh
 ```
