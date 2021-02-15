@@ -58,9 +58,19 @@ brew tap AdoptOpenJDK/openjdk
 brew install --cask adoptopenjdk11
 ```
 
+### Maven
+Depends on Java
+```
+brew install maven
+```
+
 ### VS Code
 https://code.visualstudio.com/docs?dv=osx
-Extentions: Java Extension Pack, 
+Extentions: 
+- Java Extension Pack
+- Spring Boot Tools
+- Spring Boot Dashboard
+- Lombok Annotations Support
 
 ### Atom
 https://atom.io/
@@ -106,6 +116,24 @@ Or, if you don't want/need a background service you can just run:
 
 ### MiniKube
 `brew install minikube`
+For MacOS Darwin and Docker use:
+```
+minikube start --driver=docker
+# or --driver=hyperkit
+# optional: minikube config set driver hyperkit (or docker)
+# create a hello-node to test
+kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+# expose hello-node on 9080
+kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+minikube service hello-node
+# show IP
+kubectl get node -o wide
+# show the hello-node in browser
+
+minikube delete
+```
+See: https://github.com/kubernetes/minikube/issues/9016
+(To go back to docker use minikube start --driver=docker)
 
 ### Local Docker Registry Server
 https://docs.docker.com/registry/deploying/

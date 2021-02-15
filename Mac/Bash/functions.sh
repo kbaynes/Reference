@@ -1,8 +1,37 @@
 #!/usr/bin/env bash
 
+clear
+
+functions=( \
+  f-help \
+  f-atom-home \
+  f-ssh-setup \
+  f-aws-work \
+  f-aws-kb \
+)
+
+function_desc=( \
+  "Print the help" \
+  "Open Atom to ~/" \
+  "ssh-add -K my keys" \
+  "Change global AWS keys to work, set local helper" \
+  "Change global AWS keys to kb, set local helper" \
+)
+
+
 ##
 ## Functions
 ##
+f-help() {
+  # printf `cat build/help.txt\n`
+  for i in "${!functions[@]}"; do
+    local f_name=${functions[$i]}
+    pad_string $f_name 20
+    local f_desc=${function_desc[$i]}
+    printf "   $i  $padded_str - $f_desc\n"
+  done
+  printf "\n"
+}
 f-atom-home() {
   atom ~/
 }
@@ -21,42 +50,27 @@ f-aws-kb() {
   cp ~/.aws/credentials-kb ~/.aws/credentials
   git config --local credential.helper '!aws --profile kb codecommit credential-helper $@'
 }
-f-help() {
-  printf "0  : exit      - Exit this script\n"
-  printf "1  : help      - Print the help\n"
-  printf "2  : atom-home - Run 'atom ~/'\n"
-  printf "3  : ssh-setup - Add private keys to system SSH\n"
-  printf "4  : aws-work  - Set AWS credentials to work\n"
-  printf "5  : aws-kb    - Set AWS credentials to kb personal\n"
-}
-f-action() {
-  if [[ ! $1 =~ ^-?[0-9]+$ ]]; then
-    printf "Invalid Selection\n"
-    exit 0
-  fi
-  if [ $1 -eq 0 ]; then
-    exit 1
-  elif [ $1 -eq 1 ]; then
-    f-help
-  elif [ $1 -eq 2 ]; then
-    f-atom-home
-  elif [ $1 -eq 3 ]; then
-    f-ssh-setup
-  elif [ $1 -eq 4 ]; then
-    f-aws-work
-  elif [ $1 -eq 5 ]; then
-    f-aws-kb
-  fi
+
+#
+# helper functions
+# 
+
+pad_string() {
+  padded_str=$1
+  maxlen=$2
+  while ((${#padded_str} < $maxlen)); do 
+    padded_str+=" "
+  done
 }
 
 if [ ! -z "$1" ]; then
-  f-action $1
+  ${functions[$1]}
   exit 0
 else
-  printf "Enter the number of the function and press Enter\n"
+  printf "\nEnter the number of the function and press Enter :\n"
   f-help
 
   read -p "Function number:  " -r
-  echo    # (optional) move to a new line
-  f-action $REPLY
+  printf "Running function ${functions[$REPLY]}\n\n"    # (optional) move to a new line
+  ${functions[$REPLY]}
 fi

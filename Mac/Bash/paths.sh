@@ -1,40 +1,66 @@
 #!/usr/bin/env bash
 
+clear
+
+functions=( \
+  p-help \
+  p-ref-mac-bash \
+  p-home \
+  p-github-home \
+)
+
+function_desc=( \
+  "Print the help" \
+  "Ref Mac Bash ($P_REF_MAC_BASH)" \
+  "User Home ($HOME)" \
+  "GitHub Home ($P_GITHUB_HOME)" \
+)
+
+
 ##
 ## Paths
 ##
-p-list() {
-  echo 0 : exit - Exit this script
-  echo 1 : help - Print the help
-  echo 2 : atom-home - Runs 'atom ~/'
-  echo 3 : ssh-setup - adds private keys to system SSH
-  echo 4 : a4w-init - copies a4w jars to Tomcat lib dir
-  echo 5 : a4w-webapp - copies the stp-manager war to Tomcat webapps
-  echo 6 : tomcat-start - starts tomcat
-  echo 7 : tomcat-stop - stops tomcat
+p-help() {
+  # printf `cat build/help.txt\n`
+  for i in "${!functions[@]}"; do
+    local f_name=${functions[$i]}
+    pad_string $f_name 20
+    local f_desc=${function_desc[$i]}
+    printf "   $i  $padded_str - $f_desc\n"
+  done
+  printf "\n"
+}
+p-home() {
+  cd $HOME
+}
+p-github-home() {
+  printf "cd $P_GITHUB_HOME \n\n"
+  cd $P_GITHUB_HOME
+}
+p-ref-mac-bash() {
+  printf "cd $P_REF_MAC_BASH \n\n"
+  cd $P_REF_MAC_BASH
+}
+#
+# helper functions
+# 
+
+pad_string() {
+  padded_str=$1
+  maxlen=$2
+  while ((${#padded_str} < $maxlen)); do 
+    padded_str+=" "
+  done
 }
 
-echo Enter the number of the path and press Enter
-p-list()
+if [ ! -z "$1" ]; then
+  ${functions[$1]}
+  exit 0
+else
+  printf "\nEnter the number of the path and press Enter :\n"
+  p-help
 
-read -p "Location number:  " -r
-echo    # (optional) move to a new line
-echo $REPLY
-
-if [ $REPLY -eq 0 ]; then
-  exit 1
-elif [ $REPLY -eq 1 ]; then
-  f-help
-elif [ $REPLY -eq 2 ]; then
-  f-atom-home
-elif [ $REPLY -eq 3 ]; then
-  f-ssh-setup
-elif [ $REPLY -eq 4 ]; then
-  f-a4w-init
-elif [ $REPLY -eq 5 ]; then
-  f-a4w-webapp
-elif [ $REPLY -eq 6 ]; then
-  f-tomcat-start
-elif [ $REPLY -eq 7 ]; then
-  f-tomcat-stop
+  read -p "Path number:  " -r
+  # printf "Go: ${functions[$REPLY]}\n\n"    # (optional) move to a new line
+  ${functions[$REPLY]}
 fi
