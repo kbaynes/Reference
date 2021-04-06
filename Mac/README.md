@@ -77,6 +77,12 @@ https://atom.io/
 Immediately run Atom via Spotlight to add the atom command to terminal automatically
 Run `atom ~/` and allow access via Mac security
 
+### Shellcheck
+See https://www.shellcheck.net/
+```
+brew install shellcheck
+```
+
 ### My Mac Config: Reference
 Depends on Git and SSH keys
 ```
