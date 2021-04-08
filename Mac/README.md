@@ -1,11 +1,16 @@
 # New Mac Setup
 
+### Add account to sudoers
+Gist: [Add account to sudoers on Mac](https://gist.github.com/kbaynes/912b27ce355ad3bed2d9f69daccb155f)
+
 ### iTerm2
 https://iterm2.com/
 
 ### HomeBrew
 https://brew.sh/
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+```
 (Git was automatically installed, I think it happens here)
 
 ### Bash
@@ -64,6 +69,18 @@ Depends on Java
 brew install maven
 ```
 
+### Node
+https://formulae.brew.sh/formula/node
+```
+brew install node@12
+```
+
+### Yarn
+https://formulae.brew.sh/formula/yarn#default
+```
+brew install yarn
+```
+
 ### VS Code
 https://code.visualstudio.com/docs?dv=osx
 Extentions: 
@@ -76,6 +93,9 @@ Extentions:
 https://atom.io/
 Immediately run Atom via Spotlight to add the atom command to terminal automatically
 Run `atom ~/` and allow access via Mac security
+
+### DBeaver
+https://formulae.brew.sh/cask/dbeaver-community
 
 ### My Mac Config: Reference
 Depends on Git and SSH keys
