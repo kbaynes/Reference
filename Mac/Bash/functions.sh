@@ -18,7 +18,6 @@ function_desc=( \
   "Change global AWS keys to kb, set local helper" \
 )
 
-
 ##
 ## Functions
 ##

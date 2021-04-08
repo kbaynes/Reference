@@ -13,6 +13,24 @@ https://brew.sh/
 ```
 (Git was automatically installed, I think it happens here)
 
+### Git - Check for Git first using 'git --version'
+(if not installed already)
+```
+brew install git
+git config --global user.name "Kevin *****"
+git config --global user.email Kevin@*****.com
+```
+
+### Git Repos Dir
+Create the dirs, then cd into Reference (so Bash profile step will work)
+```
+mkdir -p  ~/MyGitRepos/GitHub
+mkdir -p  ~/MyGitRepos/CodeCommit
+cd ~/MyGitRepos/GitHub
+git clone git@github.com:kbaynes/Reference.git
+cd Reference
+```
+
 ### Bash
 The Mac comes with 3.2 (2007), upgrade to latest (5.1+, 2020)
 ```
@@ -24,18 +42,14 @@ printf "chsh requires password \n"
 chsh -s /usr/local/bin/bash
 ```
 
-### Git (git --version)
-(if not installed already)
-```
-brew install git
-git config --global user.name "Kevin *****"
-git config --global user.email Kevin@*****.com
-```
+Once Bash is upgraded, then setup profile defaults: [Mac>Bash/README.md](Bash/README.md)
 
-### Git Repos Dir
+This command can be run multiple times. Backups are kept.
 ```
-mkdir -p  ~/MyGitRepos/GitHub
-mkdir -p  ~/MyGitRepos/CodeCommit
+cd Mac/Bash #if in Reference project
+# OR cd [path_to]/Reference/Mac/Bash
+bash add-profile-defaults.sh
+# quit Terminal/Shell to reload profile
 ```
 
 ### SSH Keys 
@@ -69,10 +83,12 @@ Depends on Java
 brew install maven
 ```
 
-### Node
-https://formulae.brew.sh/formula/node
+### Node via NVM
+https://formulae.brew.sh/formula/nvm
+Setup for NVM is performed in .bash_profile. See the Bash setup section.
 ```
-brew install node@12
+brew install nvm
+nvm install --lts
 ```
 
 ### Yarn
@@ -96,6 +112,15 @@ Run `atom ~/` and allow access via Mac security
 
 ### DBeaver
 https://formulae.brew.sh/cask/dbeaver-community
+```
+brew install --cask dbeaver-community
+```
+
+### Shellcheck
+See https://www.shellcheck.net/
+```
+brew install shellcheck
+```
 
 ### My Mac Config: Reference
 Depends on Git and SSH keys
@@ -122,11 +147,12 @@ Then run 'docker' from Spotlight to finish Docker Desktop
 ### Docker Machine
 `brew install docker-machine`
 Keep an eye out for things not working, might need to start this on startup
-```To have launchd start docker-machine now and restart at login:
+```
+To have launchd start docker-machine now and restart at login:
   brew services start docker-machine
 Or, if you don't want/need a background service you can just run:
   docker-machine start
-  ```
+```
 
 ### VirtualBox
 `brew install --cask virtualbox`

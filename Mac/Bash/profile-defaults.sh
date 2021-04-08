@@ -34,4 +34,13 @@ jdk() {
 }
 P_REF_MAC_BASH="PATH_TO_REFERENCE_MAC_BASH"
 P_GITHUB_HOME="PATH_TO_REFERENCE_MAC_BASH/../../.."
+
+mkdir ~/.nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+echo "Type 'f' to list functions"
+echo "Type 'p' to list paths"
+echo ""
 ##### END PROFILE DEFAULTS
