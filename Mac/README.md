@@ -9,7 +9,7 @@ https://iterm2.com/
 ### HomeBrew
 https://brew.sh/
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 (Git was automatically installed, I think it happens here)
 
