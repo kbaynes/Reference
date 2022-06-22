@@ -11,10 +11,10 @@ https://brew.sh/
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-(Git was automatically installed, I think it happens here)
+(Git is installed via XCode command line tools as part of HomeBrew)
 
 ### Git - Check for Git first using 'git --version'
-(if not installed already)
+(if not installed already. Will be installed as part of HomeBrew above.)
 ```
 brew install git
 git config --global user.name "Kevin *****"
