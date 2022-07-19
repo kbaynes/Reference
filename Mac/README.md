@@ -22,8 +22,20 @@ git config --global user.name "Kevin *****"
 git config --global user.email Kevin@*****.com
 ```
 
+### SSH Keys 
+Download `kevin-at-k*****.private_key` from Google Drive `My Drive/Keys/MyKeyPairs/` then
+
+```
+mkdir ~/.ssh/
+cp kevin-at-k*****.private_key ~/.ssh/
+cp kevin-at-k*****.private_key ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+chmod 600 ~/.ssh/kevin-at-k*****.private_key
+```
+
 ### Git Repos Dir
 Create the dirs, then cd into Reference (so Bash profile step will work)
+For GitHub, my SSH key is already registered, just need follow the SSH Keys section instructions and GitHub will work.
 ```
 mkdir -p  ~/MyGitRepos/GitHub
 mkdir -p  ~/MyGitRepos/CodeCommit
@@ -53,16 +65,6 @@ bash add-profile-defaults.sh
 # quit Terminal/Shell to reload profile
 ```
 
-### SSH Keys 
-Download `kevin-at-k*****.private_key` from Google Drive `My Drive/Keys/MyKeyPairs/` then
-
-```
-mkdir ~/.ssh/
-cp kevin-at-k*****.private_key ~/.ssh/
-cp kevin-at-k*****.private_key ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-chmod 600 ~/.ssh/kevin-at-k*****.private_key
-```
 
 ### HomeBrew Cask
 `brew tap homebrew/cask`
