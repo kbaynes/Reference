@@ -49,10 +49,10 @@ The Mac comes with 3.2 (2007), upgrade to latest (5.1+, 2020)
 ```
 brew install bash
 sudo cp /etc/shells /etc/shells_bak
-printf "add line '/usr/local/bin/bash' and save/quit \n"
+printf "add line '/opt/homebrew/bin/bash' and save/quit \n"
 sudo vim /etc/shells
 printf "chsh requires password \n"
-chsh -s /usr/local/bin/bash
+chsh -s /opt/homebrew/bin/bash
 ```
 
 Once Bash is upgraded, then setup profile defaults: [Mac>Bash/README.md](Bash/README.md)
