@@ -5,6 +5,7 @@ Gist: [Add account to sudoers on Mac](https://gist.github.com/kbaynes/912b27ce35
 
 ### iTerm2
 https://iterm2.com/
+[Fix Operation Not Permitted in iTerm](https://osxdaily.com/2018/10/09/fix-operation-not-permitted-terminal-error-macos/)
 
 ### HomeBrew
 https://brew.sh/
