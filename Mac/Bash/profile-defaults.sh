@@ -35,10 +35,24 @@ jdk() {
 P_REF_MAC_BASH="PATH_TO_REFERENCE_MAC_BASH"
 P_GITHUB_HOME="PATH_TO_REFERENCE_MAC_BASH/../../.."
 
-mkdir ~/.nvm
+# make shell aware of homebrew
+eval $(/opt/homebrew/bin/brew shellenv)
+
+# setup nvm
+mkdir -p ~/.nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+if [ "$HOSTTYPE" = "x86_64" ];then
+  # detected Intel Mac
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+else
+  # assume Apple Silicon Mac
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+fi
+
+# set command prompt
+PS1='\[\e[0m\]\u\[\e[0m\]@\h\[\e[0m\]:\W\[\e[0m\]🌶  '
 
 echo "Type 'f' to list functions"
 echo "Type 'p' to list paths"
