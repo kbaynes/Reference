@@ -48,11 +48,17 @@ cd Reference
 The Mac comes with 3.2 (2007), upgrade to latest (5.1+, 2020)
 ```
 brew install bash
+# backup /etc/shells just in case
 sudo cp /etc/shells /etc/shells_bak
-printf "add line '/usr/local/bin/bash' and save/quit \n"
+# edit /etc/shells
 sudo vim /etc/shells
-printf "chsh requires password \n"
+# for Intel macs: add line '/usr/local/bin/bash' and save/quit (:wq)
+# for Apple Silicon (M1,etc) macs: add line '/opt/homebrew/bin/bash' and save/quit (:wq)
+# chsh will prompt for password
+# for Intel macs
 chsh -s /usr/local/bin/bash
+# for Apple Silicon (M1,etc) macs
+chsh -s /opt/homebrew/bin/bash
 ```
 
 Once Bash is upgraded, then setup profile defaults: [Mac>Bash/README.md](Bash/README.md)
