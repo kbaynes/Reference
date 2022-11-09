@@ -146,6 +146,12 @@ Add Bash Functions: See [Add Bash Functions](./Bash/README.md)
 ### Add Profile Defaults - functions & paths
 CD into the Reference/Mac/Bash dir and run `bash add-profile-defaults.sh`
 
+### AWS CLI
+```
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+```
+
 ## Kubernetes on Mac
 https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7
 
